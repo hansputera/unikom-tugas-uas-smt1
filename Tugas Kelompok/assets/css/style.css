@@ -1,0 +1,301 @@
+/* ================= ROOT ================= */
+:root {
+  --bg-main: #020617;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --border: rgba(255, 255, 255, 0.12);
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --accent: #4fd1c5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* ================= BODY ================= */
+body {
+  margin: 0;
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  background: radial-gradient(circle at top, #111827, #020617);
+  color: var(--text);
+}
+
+/* ================= HERO ================= */
+.hero {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.hero h1 {
+  background: linear-gradient(90deg, var(--accent), #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ================= NAV ================= */
+.main-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem; /* Jarak antar tombol */
+  padding-bottom: 1rem;
+}
+
+.tab-btn {
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: var(--muted);
+  padding: 0.8rem 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+  transform: translateY(-2px);
+  color: #fff;
+  animation: rainbowGlow 4s linear infinite;
+}
+
+.tab-btn.active {
+  background: rgba(79, 209, 197, 0.1);
+  color: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 20px rgba(79, 209, 197, 0.25);
+}
+
+/* ================= LAYOUT ================= */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 3rem 1.5rem;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* ================= CARD ================= */
+.card {
+  background: rgba(15, 23, 42, 0.4); /* Transparan gelap */
+  backdrop-filter: blur(12px); /* Efek blur kaca (Glassmorphism) */
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  animation: rainbowGlow 4s linear infinite;
+}
+
+/* ================= ROADMAP / ABOUT CARD ================= */
+.roadmap-card,
+.expandable-card {
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Text element */
+.reveal {
+  display: block;
+  transition:
+    transform 0.45s ease,
+    opacity 0.45s ease;
+}
+
+/* Hide state */
+.roadmap-card.hide .reveal,
+.expandable-card.hide .reveal {
+  transform: translateY(-24px) scale(1.05);
+  opacity: 0;
+}
+
+/* Spin animation */
+.roadmap-card.spin .reveal,
+.expandable-card.spin .reveal {
+  animation: spinIn 0.7s ease forwards;
+}
+
+/* Keyframes */
+@keyframes spinIn {
+  from {
+    transform: translateY(32px) rotate(-180deg);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) rotate(0);
+    opacity: 1;
+  }
+}
+
+/* ================= DETAIL PAGE ================= */
+.detail-page {
+  display: none;
+  min-height: 100vh;
+  padding: 4rem 2rem;
+}
+
+.bg-fundamental {
+  background: radial-gradient(circle, #0f172a, #020617);
+}
+
+.bg-smart {
+  background: radial-gradient(circle, #1e1b4b, #020617);
+}
+
+.bg-dapps {
+  background: radial-gradient(circle, #042f2e, #020617);
+}
+
+/* ================= BUTTON ================= */
+.back-btn {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  color: #020617;
+  font-weight: 600;
+  background: linear-gradient(90deg, var(--accent), #8b5cf6);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.back-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* ================= EXPANDABLE CONTENT ================= */
+.expand-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  margin-top: 1rem;
+  transform: translateY(-8px);
+  transition:
+    max-height 0.6s ease,
+    opacity 0.4s ease,
+    transform 0.4s ease;
+}
+
+.expandable-card.expanded .expand-content {
+  max-height: 1200px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================= LINKS IN EXPAND CONTENT ================= */
+.expand-content ul li a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.expand-content ul li a:hover {
+  color: #fff;
+  text-shadow: 0 0 10px rgba(79, 209, 197, 0.8);
+  text-decoration: underline;
+}
+
+/* ================= CONTACT LIST ================= */
+.contact-list {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-list li {
+  margin-bottom: 0.8rem;
+}
+
+.contact-list a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.contact-list a:hover {
+  color: #fff;
+  text-shadow: 0 0 10px rgba(79, 209, 197, 0.8);
+  text-decoration: underline;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--muted);
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes rainbowGlow {
+  0% {
+    border-color: #ff0000;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+  }
+  10% {
+    border-color: #ff7f00;
+    box-shadow: 0 0 20px rgba(255, 127, 0, 0.5);
+  }
+  20% {
+    border-color: #ffff00;
+    box-shadow: 0 0 20px rgba(255, 255, 0, 0.5);
+  }
+  30% {
+    border-color: #80ff00;
+    box-shadow: 0 0 20px rgba(128, 255, 0, 0.5);
+  }
+  40% {
+    border-color: #00ff00;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+  }
+  50% {
+    border-color: #00ff80;
+    box-shadow: 0 0 20px rgba(0, 255, 128, 0.5);
+  }
+  60% {
+    border-color: #00ffff;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+  }
+  70% {
+    border-color: #0080ff;
+    box-shadow: 0 0 20px rgba(0, 128, 255, 0.5);
+  }
+  80% {
+    border-color: #0000ff;
+    box-shadow: 0 0 20px rgba(0, 0, 255, 0.5);
+  }
+  90% {
+    border-color: #8000ff;
+    box-shadow: 0 0 20px rgba(128, 0, 255, 0.5);
+  }
+  95% {
+    border-color: #ff00ff;
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+  }
+  100% {
+    border-color: #ff0000;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+  }
+}

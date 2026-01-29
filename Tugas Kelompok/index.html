@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blockchain Developer Roadmap</title>
+    <meta name="description" content="Blockchain Developer Roadmap" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <style>
+      body {
+        /* Tempat Background Dengan Nuansa Futuristik*/
+        background: url("https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=2832&auto=format&fit=crop")
+          no-repeat center center fixed;
+        background-size: cover;
+        color: #e0e0e0;
+      }
+
+      /* Tempat Warna */
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          rgba(15, 23, 42, 0.85),
+          rgba(0, 0, 0, 0.95)
+        );
+        z-index: -1;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ================= Kepala ================= -->
+    <header class="hero">
+      <h1>Blockchain Developer Roadmap</h1>
+    </header>
+
+    <!-- ================= Navigasi ================= -->
+    <nav class="main-nav">
+      <button class="tab-btn active" data-tab="about">Tentang</button>
+      <button class="tab-btn" data-tab="roadmap">Roadmap</button>
+      <button class="tab-btn" data-tab="tools">Tools</button>
+      <button class="tab-btn" data-tab="contact">Contact</button>
+    </nav>
+
+    <main class="container">
+      <!-- ======================================================
+=                         Isi Di Tab Tentang                        =
+======================================================= -->
+      <section id="about" class="tab-content active">
+        <div class="card expandable-card">
+          <h2 class="reveal">📘 Tentang Roadmap</h2>
+          <p class="reveal">
+            Klik setiap Tab Untuk Membaca Penjelasan Lengkap Mengenai
+            Perancangan Dan Planning Awal Blockchain Dari Pembuatan Blockchain
+            ini
+          </p>
+
+          <div class="expand-content">
+            <p>
+              Roadmap Ini Adalah Langkah Awal Perencanaan Yang Dirancang Sebagai
+              Panduan Untuk Jangka Panjang Untuk Membangun Blockchain Dari Nol
+              Hingga Production-Grade Dan Untuk Sementara Hanya Sampai Disini
+              Pembuatan Web Ini Dan Akan kami Lanjutkan Bila Diperlukan
+            </p>
+
+            <ul>
+              <li>
+                <a href="https://ethereum.org/en/web3/" target="_blank"
+                  >Fondasi teknologi Web3</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://ethereum.org/en/developers/docs/smart-contracts/security/"
+                  target="_blank"
+                  >Keamanan & smart contract</a
+                >
+              </li>
+              <li>
+                <a href="https://ethereum.org/en/dapps/" target="_blank"
+                  >dApps & integrasi Web3</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://ethereum.org/en/developers/docs/scaling/"
+                  target="_blank"
+                  >Scalability & arsitektur sistem</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card expandable-card">
+          <h3 class="reveal">🧱 Fundamental Blockchain & Kriptografi</h3>
+
+          <div class="expand-content">
+            <p>
+              Tahap fundamental membangun pemahaman sistem trustless tanpa
+              otoritas pusat
+            </p>
+
+            <h4>Blockchain</h4>
+            <ul>
+              <li>
+                <a
+                  href="https://en.wikipedia.org/wiki/Merkle_tree"
+                  target="_blank"
+                  >Block, hash, Merkle Tree</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://en.wikipedia.org/wiki/Distributed_ledger"
+                  target="_blank"
+                  >Distributed ledger</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://en.wikipedia.org/wiki/Peer-to-peer"
+                  target="_blank"
+                  >P2P Network</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://ethereum.org/en/developers/docs/consensus-mechanisms/"
+                  target="_blank"
+                  >Consensus mechanism</a
+                >
+              </li>
+            </ul>
+
+            <h4>Kriptografi</h4>
+            <ul>
+              <li>
+                <a
+                  href="https://en.wikipedia.org/wiki/Cryptographic_hash_function"
+                  target="_blank"
+                  >Hash function</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://en.wikipedia.org/wiki/Public-key_cryptography"
+                  target="_blank"
+                  >Public / Private key</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://en.wikipedia.org/wiki/Digital_signature"
+                  target="_blank"
+                  >Digital signature</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://info.etherscan.com/what-is-an-ethereum-address/"
+                  target="_blank"
+                  >Address generation</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Isi Smart Contract -->
+        <div class="card expandable-card">
+          <h3 class="reveal">📜 Smart Contract & Security</h3>
+
+          <div class="expand-content">
+            <p>
+              Smart contract adalah program immutable yang menjadi inti
+              ekosistem blockchain modern
+            </p>
+
+            <ul>
+              <li>
+                <a href="https://soliditylang.org/" target="_blank"
+                  >Solidity & EVM</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://ethereum.org/en/developers/docs/gas/"
+                  target="_blank"
+                  >Gas optimization</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://consensys.github.io/smart-contract-best-practices/"
+                  target="_blank"
+                  >Security pattern</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://ethereum.org/en/developers/docs/smart-contracts/testing/"
+                  target="_blank"
+                  >Audit & testing</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Isi Dapps -->
+        <div class="card expandable-card">
+          <h3 class="reveal">🌐 dApps & Web3</h3>
+
+          <div class="expand-content">
+            <p>dApps menghubungkan smart contract dengan user interface Web3</p>
+
+            <ul>
+              <li>
+                <a href="https://docs.metamask.io/" target="_blank"
+                  >Wallet integration</a
+                >
+              </li>
+              <li>
+                <a href="https://docs.ethers.org/" target="_blank"
+                  >Ethers.js / Web3.js</a
+                >
+              </li>
+              <li>
+                <a href="https://redux.js.org/" target="_blank"
+                  >State management</a
+                >
+              </li>
+              <li>
+                <a href="https://ethereum.org/en/defi/" target="_blank"
+                  >DeFi & NFT frontend</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Topik Utama Perancangan System Blockchain-->
+        <div class="card expandable-card">
+          <h3 class="reveal">🚀 Scaling & Advanced Topics</h3>
+
+          <div class="expand-content">
+            <p>Fokus pada sistem blockchain skala besar dan production-grade</p>
+
+            <ul>
+              <li>
+                <a href="https://ethereum.org/en/layer-2/" target="_blank"
+                  >Layer 2 & Rollups</a
+                >
+              </li>
+              <li>
+                <a href="https://ipfs.tech/" target="_blank"
+                  >IPFS & decentralized storage</a
+                >
+              </li>
+              <li>
+                <a href="https://thegraph.com/" target="_blank"
+                  >Monitoring & logging</a
+                >
+              </li>
+              <li>
+                <a href="https://immunefi.com/" target="_blank"
+                  >Security hardening</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================
+=                         Tab Roadmap                         =
+======================================================= -->
+      <section id="roadmap" class="tab-content">
+        <div class="card roadmap-card" data-detail="fundamental">
+          <h3 class="reveal">1️⃣ Fundamental Blockchain</h3>
+          <ul>
+            <li class="reveal">Blockchain structure</li>
+            <li class="reveal">Cryptography</li>
+            <li class="reveal">Consensus</li>
+          </ul>
+        </div>
+
+        <div class="card roadmap-card" data-detail="smart">
+          <h3 class="reveal">2️⃣ Smart Contracts</h3>
+          <ul>
+            <li class="reveal">Solidity</li>
+            <li class="reveal">Security</li>
+            <li class="reveal">Testing</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ======================================================
+=                          Tab Tools                          =
+======================================================= -->
+      <section id="tools" class="tab-content">
+        <div class="card">
+          <h2>Tools & Resources</h2>
+          <ul>
+            <li>Solidity</li>
+            <li>Hardhat / Foundry</li>
+            <li>Ethers.js</li>
+            <li>OpenZeppelin</li>
+            <li>IPFS</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ======================================================
+=                         Tab Contact                         =
+======================================================= -->
+      <section id="contact" class="tab-content">
+        <div class="card">
+          <h2>📞 Hubungi Kami</h2>
+
+          <div class="contact-group">
+            <h3>Aditya Syahestiano</h3>
+            <ul class="contact-list">
+              <li>
+                WhatsApp :
+                <a href="https://wa.me/6283875363898" target="_blank"
+                  >+62 838-7536-3898</a
+                >
+              </li>
+              <li>
+                Email :
+                <a href="mailto:aditya.10125903@mahasiswa.unikom.ac.id"
+                  >aditya.10125903@mahasiswa.unikom.ac.id</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <hr
+            style="
+              border: 0;
+              border-top: 1px solid rgba(255, 255, 255, 0.1);
+              margin: 1.5rem 0;
+            "
+          />
+
+          <div class="contact-group">
+            <h3>Hanif Dwi Saputera</h3>
+            <ul class="contact-list">
+              <li>
+                WhatsApp : <a href="https://wa.me/62" target="_blank">+62</a>
+              </li>
+              <li>Email : <a href="mailto:hans........">hans........</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= Kaki ================= -->
+
+      <section id="detail-fundamental" class="detail-page bg-fundamental">
+        <h2>Fundamental Blockchain</h2>
+        <p>Struktur blockchain, kriptografi, dan mekanisme konsensus.</p>
+        <button class="back-btn">⬅ Kembali</button>
+      </section>
+
+      <section id="detail-smart" class="detail-page bg-smart">
+        <h2>Smart Contracts</h2>
+        <p>Program immutable yang berjalan di blockchain.</p>
+        <button class="back-btn">⬅ Kembali</button>
+      </section>
+    </main>
+
+    <footer>
+      © 2026 Tugas Akhir Pengantar Web 1 Auth By : Aditya Syahestiano x Hanif
+      Dwi Saputera<br />
+      10125903 x 1012
+    </footer>
+
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>
