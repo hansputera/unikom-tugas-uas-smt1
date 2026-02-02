@@ -1,0 +1,582 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #fafbfc;
+  --foreground: #0f1419;
+  --card: #ffffff;
+  --card-foreground: #0f1419;
+  --popover: #ffffff;
+  --popover-foreground: #0f1419;
+  --primary: #0f1419;
+  --primary-foreground: #ffffff;
+  --secondary: #e2e8f0;
+  --secondary-foreground: #0f1419;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --accent: #10b981;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #e2e8f0;
+  --input: #ffffff;
+  --ring: #0f1419;
+  --chart-1: #10b981;
+  --chart-2: #3b82f6;
+  --chart-3: #8b5cf6;
+  --chart-4: #f59e0b;
+  --chart-5: #ec4899;
+  --radius: 0.625rem;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #0f1419;
+  --sidebar-primary: #0f1419;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #10b981;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #e2e8f0;
+  --sidebar-ring: #0f1419;
+}
+
+.dark {
+  --background: #0a0e27;
+  --foreground: #f5f7fb;
+  --card: #111827;
+  --card-foreground: #f5f7fb;
+  --popover: #111827;
+  --popover-foreground: #f5f7fb;
+  --primary: #ffffff;
+  --primary-foreground: #0a0e27;
+  --secondary: #1f2937;
+  --secondary-foreground: #f5f7fb;
+  --muted: #1f2937;
+  --muted-foreground: #94a3b8;
+  --accent: #10b981;
+  --accent-foreground: #0a0e27;
+  --destructive: #ef4444;
+  --destructive-foreground: #fca5a5;
+  --border: #1f2937;
+  --input: #111827;
+  --ring: #ffffff;
+  --chart-1: #10b981;
+  --chart-2: #3b82f6;
+  --chart-3: #8b5cf6;
+  --chart-4: #f59e0b;
+  --chart-5: #ec4899;
+  --sidebar: #111827;
+  --sidebar-foreground: #f5f7fb;
+  --sidebar-primary: #ffffff;
+  --sidebar-primary-foreground: #0a0e27;
+  --sidebar-accent: #10b981;
+  --sidebar-accent-foreground: #0a0e27;
+  --sidebar-border: #1f2937;
+  --sidebar-ring: #ffffff;
+}
+
+@theme inline {
+  --font-sans: 'Geist', 'Geist Fallback';
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* ================================
+   Article Content Styles
+   ================================ */
+
+/* Article intro */
+.article-intro {
+  @apply mb-8 pb-8 border-b border-border;
+}
+
+.article-intro .lead {
+  @apply text-xl leading-relaxed text-foreground;
+}
+
+/* Headings */
+.prose h2 {
+  @apply text-2xl font-bold text-foreground mt-12 mb-4;
+}
+
+.prose h3 {
+  @apply text-xl font-semibold text-foreground mt-8 mb-3;
+}
+
+.prose p {
+  @apply text-muted-foreground leading-relaxed mb-4;
+}
+
+.prose ul, .prose ol {
+  @apply text-muted-foreground space-y-2 mb-6 ml-6;
+}
+
+.prose li {
+  @apply leading-relaxed;
+}
+
+.prose strong {
+  @apply text-foreground font-semibold;
+}
+
+/* Callout boxes */
+.callout {
+  @apply flex gap-4 p-5 rounded-xl mb-6 border;
+}
+
+.callout-info {
+  @apply bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800;
+}
+
+.callout-success {
+  @apply bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800;
+}
+
+.callout-icon {
+  @apply text-2xl flex-shrink-0;
+}
+
+.callout-content {
+  @apply text-sm leading-relaxed;
+}
+
+.callout-info .callout-content {
+  @apply text-blue-800 dark:text-blue-200;
+}
+
+.callout-success .callout-content {
+  @apply text-green-800 dark:text-green-200;
+}
+
+/* Highlight box */
+.highlight-box {
+  @apply p-5 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-xl mb-6;
+}
+
+.highlight-box p {
+  @apply text-amber-800 dark:text-amber-200 mb-0;
+}
+
+.highlight-box.warning {
+  @apply bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800;
+}
+
+.highlight-box.warning p, .highlight-box.warning h3 {
+  @apply text-red-800 dark:text-red-200;
+}
+
+/* Steps */
+.steps {
+  @apply space-y-4 mb-8;
+}
+
+.step {
+  @apply flex gap-4 items-start p-4 bg-card border border-border rounded-xl;
+}
+
+.step-number {
+  @apply w-8 h-8 bg-accent text-accent-foreground rounded-full flex items-center justify-center font-bold flex-shrink-0;
+}
+
+.step-content {
+  @apply text-muted-foreground;
+}
+
+.step-content strong {
+  @apply text-foreground block mb-1;
+}
+
+/* Comparison cards */
+.comparison-cards {
+  @apply grid md:grid-cols-2 gap-4 mb-8;
+}
+
+.comparison-card {
+  @apply p-6 bg-card border border-border rounded-xl text-center;
+}
+
+.comparison-icon {
+  @apply text-4xl mb-3;
+}
+
+.comparison-card h3 {
+  @apply text-lg font-bold text-foreground mb-2;
+}
+
+.comparison-card p {
+  @apply text-sm text-muted-foreground mb-3;
+}
+
+.comparison-tag {
+  @apply inline-block px-3 py-1 bg-accent/10 text-accent text-xs font-medium rounded-full;
+}
+
+/* Benefits grid */
+.benefits-grid {
+  @apply grid grid-cols-2 md:grid-cols-4 gap-4 mb-8;
+}
+
+.benefit {
+  @apply p-4 bg-card border border-border rounded-xl text-center;
+}
+
+.benefit-icon {
+  @apply text-2xl block mb-2;
+}
+
+.benefit strong {
+  @apply text-foreground block mb-1;
+}
+
+.benefit p {
+  @apply text-xs text-muted-foreground mb-0;
+}
+
+/* Info cards */
+.info-cards {
+  @apply grid md:grid-cols-2 gap-4 mb-8;
+}
+
+.info-card {
+  @apply p-5 bg-card border border-border rounded-xl;
+}
+
+.info-icon {
+  @apply text-3xl mb-2;
+}
+
+.info-card h3 {
+  @apply text-lg font-bold text-foreground mb-1;
+}
+
+.info-card p {
+  @apply text-sm text-muted-foreground mb-3;
+}
+
+.info-card .example {
+  @apply text-xs p-2 bg-muted rounded-lg;
+}
+
+.info-card .example span {
+  @apply text-accent font-medium;
+}
+
+/* Scenario box */
+.scenario-box {
+  @apply p-5 bg-card border border-border rounded-xl mb-4;
+}
+
+.scenario-box h3 {
+  @apply text-base font-bold text-foreground mb-2;
+}
+
+.scenario-box p {
+  @apply text-sm text-muted-foreground mb-0;
+}
+
+.scenario-box .result {
+  @apply mt-3 text-sm font-medium;
+}
+
+.scenario-box .result.bad {
+  @apply text-red-600 dark:text-red-400;
+}
+
+.scenario-box .result.good {
+  @apply text-green-600 dark:text-green-400;
+}
+
+/* Checklist */
+.checklist {
+  @apply space-y-3 mb-8;
+}
+
+.checklist-item {
+  @apply flex gap-3 p-4 rounded-xl;
+}
+
+.checklist-item.good {
+  @apply bg-green-50 dark:bg-green-900/20;
+}
+
+.checklist-item.bad {
+  @apply bg-red-50 dark:bg-red-900/20;
+}
+
+.checklist-item .check {
+  @apply w-6 h-6 rounded-full flex items-center justify-center font-bold flex-shrink-0 text-sm;
+}
+
+.checklist-item.good .check {
+  @apply bg-green-500 text-white;
+}
+
+.checklist-item.bad .check {
+  @apply bg-red-500 text-white;
+}
+
+.checklist-item strong {
+  @apply text-foreground block;
+}
+
+.checklist-item p {
+  @apply text-sm text-muted-foreground mb-0;
+}
+
+/* Comparison table */
+.comparison-table {
+  @apply border border-border rounded-xl overflow-hidden mb-8;
+}
+
+.table-row {
+  @apply grid grid-cols-3 gap-4;
+}
+
+.table-row.header {
+  @apply bg-muted p-4 font-semibold text-sm text-foreground;
+}
+
+.table-row:not(.header) {
+  @apply p-4 border-t border-border text-sm;
+}
+
+.table-row:not(.header) div {
+  @apply text-muted-foreground;
+}
+
+/* Game steps */
+.game-steps {
+  @apply space-y-4 mb-8;
+}
+
+.game-step {
+  @apply flex gap-4 p-5 bg-card border border-border rounded-xl;
+}
+
+.game-step-icon {
+  @apply text-3xl flex-shrink-0;
+}
+
+.game-step-content h3 {
+  @apply text-lg font-bold text-foreground mb-2;
+}
+
+.game-step-content p {
+  @apply text-sm text-muted-foreground mb-0;
+}
+
+.code-example {
+  @apply mt-3 p-3 bg-muted rounded-lg font-mono text-xs space-y-1;
+}
+
+.code-example p {
+  @apply mb-0 text-muted-foreground;
+}
+
+/* Concept box */
+.concept-box {
+  @apply p-5 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 border border-purple-200 dark:border-purple-800 rounded-xl mb-6;
+}
+
+.concept-box p, .concept-box ol {
+  @apply text-purple-800 dark:text-purple-200;
+}
+
+.concept-box blockquote {
+  @apply italic text-lg my-4 pl-4 border-l-4 border-purple-400;
+}
+
+/* Why cards */
+.why-cards {
+  @apply grid md:grid-cols-3 gap-4 mb-8;
+}
+
+.why-card {
+  @apply p-5 bg-card border border-border rounded-xl text-center;
+}
+
+.why-icon {
+  @apply text-3xl mb-3;
+}
+
+.why-card h3 {
+  @apply font-bold text-foreground mb-2;
+}
+
+.why-card p {
+  @apply text-sm text-muted-foreground mb-0;
+}
+
+/* Pros/Cons */
+.pros-cons {
+  @apply grid md:grid-cols-2 gap-4 mb-8;
+}
+
+.pros, .cons {
+  @apply p-5 rounded-xl;
+}
+
+.pros {
+  @apply bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800;
+}
+
+.cons {
+  @apply bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800;
+}
+
+.pros h3 {
+  @apply text-green-700 dark:text-green-300 mb-3;
+}
+
+.cons h3 {
+  @apply text-red-700 dark:text-red-300 mb-3;
+}
+
+.pros ul, .cons ul {
+  @apply space-y-2 ml-0 list-none;
+}
+
+.pros li {
+  @apply text-sm text-green-800 dark:text-green-200;
+}
+
+.cons li {
+  @apply text-sm text-red-800 dark:text-red-200;
+}
+
+/* Coin list */
+.coin-list {
+  @apply space-y-3 mb-8;
+}
+
+.coin-item {
+  @apply flex gap-4 items-center p-4 bg-card border border-border rounded-xl;
+}
+
+.coin-icon {
+  @apply text-2xl w-10 h-10 flex items-center justify-center bg-muted rounded-lg;
+}
+
+.coin-item strong {
+  @apply text-foreground block;
+}
+
+.coin-item p {
+  @apply text-sm text-muted-foreground mb-0;
+}
+
+/* Comparison visual */
+.comparison-visual {
+  @apply flex flex-col md:flex-row gap-4 items-stretch mb-8;
+}
+
+.compare-item {
+  @apply flex-1 p-5 bg-card border border-border rounded-xl;
+}
+
+.compare-item h3 {
+  @apply text-lg font-bold text-foreground text-center mb-4;
+}
+
+.compare-content p {
+  @apply text-sm text-muted-foreground mb-2;
+}
+
+.compare-vs {
+  @apply flex items-center justify-center text-2xl font-bold text-accent;
+}
+
+/* Earning steps */
+.earning-steps {
+  @apply space-y-4 mb-8;
+}
+
+.earning-step {
+  @apply flex gap-4 items-start p-4 bg-card border border-border rounded-xl;
+}
+
+.step-num {
+  @apply w-8 h-8 bg-accent text-accent-foreground rounded-full flex items-center justify-center font-bold flex-shrink-0;
+}
+
+.earning-step strong {
+  @apply text-foreground block;
+}
+
+.earning-step p {
+  @apply text-sm text-muted-foreground mb-0;
+}
+
+/* Tips box */
+.tips-box {
+  @apply space-y-3 p-5 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-xl mb-8;
+}
+
+.tip {
+  @apply flex gap-3 items-start;
+}
+
+.tip-icon {
+  @apply text-lg flex-shrink-0;
+}
+
+.tip p {
+  @apply text-sm text-blue-800 dark:text-blue-200 mb-0;
+}
+
+/* Example box */
+.example-box {
+  @apply mt-3 p-3 bg-muted rounded-lg text-sm;
+}
+
+.example-box p {
+  @apply text-muted-foreground mb-1;
+}
+
+.note {
+  @apply text-xs text-muted-foreground italic mt-2;
+}
+
