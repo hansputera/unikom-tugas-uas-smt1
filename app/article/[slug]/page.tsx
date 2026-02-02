@@ -1,11 +1,10 @@
 import Link from 'next/link'
-import { ArrowLeft, Clock, User, Calendar, BookOpen } from 'lucide-react'
+import { ArrowLeft, Clock, Calendar, BookOpen } from 'lucide-react'
 import { notFound } from 'next/navigation'
 import { promises as fs } from 'fs'
 import path from 'path'
 import { getArticleMetadata, getAllArticleSlugs, articlesMetadata } from '@/content/articles/metadata'
 
-// Generate static params for all articles
 export async function generateStaticParams() {
   const slugs = getAllArticleSlugs()
   return slugs.map((slug) => ({ slug }))
@@ -21,7 +20,6 @@ async function getArticleContent(slug: string): Promise<string | null> {
   }
 }
 
-// Get related articles (different from current)
 function getRelatedArticles(currentSlug: string) {
   const allSlugs = Object.keys(articlesMetadata)
   return allSlugs
@@ -39,10 +37,10 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   const content = await getArticleContent(slug)
 
   if (!metadata || !content) {
-    notFound()
+    notFound();
   }
 
-  const relatedArticles = getRelatedArticles(slug)
+  const relatedArticles = getRelatedArticles(slug);
 
   return (
     <div className="min-h-screen bg-background">
@@ -83,10 +81,6 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
           {/* Meta info */}
           <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
-            <div className="flex items-center gap-2">
-              <User size={14} />
-              <span>{metadata.author}</span>
-            </div>
             <div className="w-1 h-1 bg-muted-foreground rounded-full hidden sm:block" />
             <div className="flex items-center gap-2">
               <Calendar size={14} />

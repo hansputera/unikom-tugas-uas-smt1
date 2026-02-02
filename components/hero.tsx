@@ -52,7 +52,7 @@ export default function Hero() {
           {/* Stats */}
           <div className="grid grid-cols-3 gap-8 pt-16 w-full">
             <div className="flex flex-col items-center">
-              <div className="text-3xl sm:text-4xl font-bold text-accent">$2.5T+</div>
+              <div className="text-3xl sm:text-4xl font-bold text-accent">$2.6T+</div>
               <p className="text-sm text-muted-foreground mt-2">Market Cap</p>
             </div>
             <div className="flex flex-col items-center">
@@ -60,23 +60,10 @@ export default function Hero() {
               <p className="text-sm text-muted-foreground mt-2">Cryptocurrencies</p>
             </div>
             <div className="flex flex-col items-center">
-              <div className="text-3xl sm:text-4xl font-bold text-accent">200M+</div>
+              <div className="text-3xl sm:text-4xl font-bold text-accent">500M+</div>
               <p className="text-sm text-muted-foreground mt-2">Users Worldwide</p>
             </div>
           </div>
-
-          {/* Data Source Attribution */}
-          <p className="text-xs text-muted-foreground pt-4">
-            Market data powered by{' '}
-            <a 
-              href="https://www.coingecko.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-accent hover:underline"
-            >
-              CoinGecko
-            </a>
-          </p>
         </div>
       </div>
 
