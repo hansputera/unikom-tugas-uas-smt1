@@ -6,17 +6,17 @@ import path from 'path'
 import { getArticleMetadata, getAllArticleSlugs, articlesMetadata } from '@/content/articles/metadata'
 
 export async function generateStaticParams() {
-  const slugs = getAllArticleSlugs()
-  return slugs.map((slug) => ({ slug }))
+  const slugs = getAllArticleSlugs();
+  return slugs.map((slug) => ({ slug }));
 }
 
 async function getArticleContent(slug: string): Promise<string | null> {
   try {
-    const filePath = path.join(process.cwd(), 'content', 'articles', `${slug}.html`)
-    const content = await fs.readFile(filePath, 'utf-8')
-    return content
+    const filePath = path.join(process.cwd(), 'content', 'articles', `${slug}.html`);
+    const content = await fs.readFile(filePath, 'utf-8');
+    return content;
   } catch {
-    return null
+    return null;
   }
 }
 

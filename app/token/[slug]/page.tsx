@@ -16,11 +16,11 @@ export async function generateStaticParams() {
 
 async function getTokenContent(slug: string): Promise<string | null> {
   try {
-    const filePath = path.join(process.cwd(), 'content', 'tokens', `${slug}.html`)
-    const content = await fs.readFile(filePath, 'utf-8')
-    return content
+    const filePath = path.join(process.cwd(), 'content', 'tokens', `${slug}.html`);
+    const content = await fs.readFile(filePath, 'utf-8');
+    return content;
   } catch {
-    return null
+    return null;
   }
 }
 

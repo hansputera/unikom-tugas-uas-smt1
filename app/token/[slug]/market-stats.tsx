@@ -9,12 +9,12 @@ import {
 } from '@/lib/coingecko'
 
 interface MarketStatsProps {
-  data: CoinMarketData
+  data: CoinMarketData;
 }
 
 export function MarketStats({ data }: MarketStatsProps) {
-  const isPositive24h = (data.price_change_percentage_24h ?? 0) >= 0
-  const isPositive7d = (data.price_change_percentage_7d ?? 0) >= 0
+  const isPositive24h = (data.price_change_percentage_24h ?? 0) >= 0;
+  const isPositive7d = (data.price_change_percentage_7d ?? 0) >= 0;
 
   return (
     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">

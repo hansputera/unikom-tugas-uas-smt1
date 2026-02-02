@@ -83,11 +83,6 @@ export default function ArticlesPage() {
                   {article.title}
                 </h2>
 
-                {/* Author and date */}
-                <p className="text-sm text-muted-foreground mb-4">
-                  By {article.author}
-                </p>
-
                 {/* Footer */}
                 <div className="mt-auto pt-4 border-t border-border/50 flex items-center justify-between">
                   <div className="flex items-center gap-2 text-xs text-muted-foreground">

@@ -114,14 +114,12 @@ export function BlockchainSimulator() {
   }
 
   const recalculateChain = () => {
-    // Recalculate all hashes from the modified block onwards
     const newBlocks = [...blocks]
     
     for (let i = 1; i < newBlocks.length; i++) {
       const block = newBlocks[i]
       const previousBlock = newBlocks[i - 1]
       
-      // Recalculate this block's hash with the new data and correct previous hash
       const newHash = calculateHash(block.id, block.timestamp, block.data, previousBlock.hash, block.nonce)
       newBlocks[i] = {
         ...block,
