@@ -9,7 +9,6 @@ export default function ArticlesPage() {
     ...metadata,
   }))
 
-  // Color mapping for categories
   const categoryColors: Record<string, string> = {
     'Basics': 'from-green-100 to-emerald-100 dark:from-green-900/30 dark:to-emerald-900/30',
     'Economics': 'from-blue-100 to-cyan-100 dark:from-blue-900/30 dark:to-cyan-900/30',
