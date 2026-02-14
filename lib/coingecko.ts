@@ -1,3 +1,11 @@
+/**
+ * NIM: 10125905
+ * Nama: HANIF DWY PUTRA S
+ *
+ * NIM: 10125903
+ * Nama: ADITYA SYAHESTIANO
+ */
+
 // CoinGecko API integration for real-time crypto market data
 // Free API - no API key required (rate limited to ~10-30 calls/minute)
 

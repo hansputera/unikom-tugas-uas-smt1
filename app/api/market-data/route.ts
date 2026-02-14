@@ -1,3 +1,11 @@
+/**
+ * NIM: 10125905
+ * Nama: HANIF DWY PUTRA S
+ *
+ * NIM: 10125903
+ * Nama: ADITYA SYAHESTIANO
+ */
+
 import { NextResponse } from 'next/server'
 
 export const revalidate = 60;

@@ -1,3 +1,11 @@
+/**
+ * NIM: 10125905
+ * Nama: HANIF DWY PUTRA S
+ *
+ * NIM: 10125903
+ * Nama: ADITYA SYAHESTIANO
+ */
+
 import React from "react"
 import type { Metadata } from 'next'
 import { Analytics } from '@vercel/analytics/next'

@@ -1,3 +1,11 @@
+/**
+ * NIM: 10125905
+ * Nama: HANIF DWY PUTRA S
+ *
+ * NIM: 10125903
+ * Nama: ADITYA SYAHESTIANO
+ */
+
 import Link from 'next/link'
 import { ArrowLeft, ArrowRight, Clock } from 'lucide-react'
 import { articlesMetadata } from '@/content/articles/metadata'
